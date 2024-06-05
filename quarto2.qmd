@@ -1,0 +1,25 @@
+---
+title: "Quarto 2"
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: make-setup
+#| message: false
+#| warning: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+#| label: make-plot
+#| warning: false
+penguins |> 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+    geom_point() +
+    labs(title = "Penguins Body Mass compared to Flipper Length", 
+         x = "Body Mass", 
+         y = "Flipper Length")
+```
